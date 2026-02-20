@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+    --color-*: initial;
+    --color-white: #ffffff;
+    --color-light-grey: #f1f2f3;
+    --color-light-middle-grey: #C5C1C8;
+    --color-middle-grey: #6C6C6C;
+    --color-dark-grey: #262626;
+    --color-purple: #7A00DD;
+    --color-purple-darkened: #6300B4;
+
+    --font-lato: "Lato", sans-serif;
+}
+
+@layer base {
+    body {
+        font-family: var(--font-lato);
+        color: var(--color-dark-grey);
+        line-height: 1.25;
+    }
+
+    h1 {
+        font-size: var(--text-4xl);
+        text-align: center;
+    }
+
+    h2 {
+        font-size: var(--text-2xl);
+        text-align: center;
+    }
+
+    input,
+    select {
+        border: 1px solid var(--color-light-middle-grey);
+        border-radius: var(--radius-sm);
+        height: calc(var(--spacing) * 10);
+        padding: calc(var(--spacing) * 2);
+    }
+}
