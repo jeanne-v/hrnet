@@ -1,13 +1,33 @@
+import { useDispatch } from "react-redux";
 import states from "../../statesData";
+import { addEmployee } from "../../slices/employeesSlice";
 
 export default function Home() {
+  const dispatch = useDispatch();
+
+  function handleSubmit(formData) {
+    const employee = {
+      firstName: formData.get("first-name"),
+      lastName: formData.get("last-name"),
+      dateOfBirth: formData.get("date-of-birth"),
+      startDate: formData.get("start-date"),
+      department: formData.get("department"),
+      street: formData.get("street"),
+      city: formData.get("city"),
+      state: formData.get("state"),
+      zipCode: formData.get("zip-code"),
+    };
+
+    dispatch(addEmployee(employee));
+  }
+
   return (
     <div>
       <h1>Home</h1>
       <div className="bg-white mt-8 ml-auto mr-auto max-w-lg rounded-xl p-6">
         <h2>Create Employee</h2>
 
-        <form className="mt-4 flex flex-col gap-4 items-center">
+        <form action={handleSubmit} className="mt-4 flex flex-col gap-4 items-center">
           <div className="flex flex-col gap-1 w-full">
             <label htmlFor="first-name">First Name</label>
             <input id="first-name" name="first-name" type="text" />
