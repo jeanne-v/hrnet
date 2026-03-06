@@ -1,0 +1,8 @@
+.wrapper {
+    min-height: 100vh;
+    background-color: var(--main-bg-color);
+}
+
+.main {
+    padding: 32px;
+}

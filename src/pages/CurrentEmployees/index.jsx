@@ -1,12 +1,13 @@
 import { useSelector } from "react-redux";
+import styles from "./CurrentEmployees.module.css";
 
 export default function CurrentEmployees() {
   const employees = useSelector((state) => state.employees);
   return (
     <div>
-      <h1>Current Employees</h1>
-      <div className="bg-white mt-8 ml-auto mr-auto max-w-5xl rounded-xl p-6">
-        <table>
+      <h1 className={styles.heading}>Current Employees</h1>
+      <div className={styles.content}>
+        <table className={styles.table}>
           <thead>
             <tr>
               <th>First Name</th>

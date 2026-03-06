@@ -1,0 +1,20 @@
+.heading {
+    margin: 0;
+}
+
+.content {
+    background-color: var(--sec-bg-color);
+    margin: 32px auto 0;
+    padding: 24px;
+    border-radius: 12px;
+    max-width: 1024px;
+}
+
+.table {
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    border: 1px solid var(--border-color);
+}

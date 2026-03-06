@@ -1,20 +1,22 @@
 import { NavLink } from "react-router";
+import clsx from "clsx";
+import styles from "./Header.module.css";
 
 export default function Header() {
   return (
-    <header className="bg-white sticky top-0 flex p-6 justify-between items-center shadow-md">
-      <NavLink to="/" className="text-2xl font-bold">
+    <header className={styles.header}>
+      <NavLink to="/" className={clsx(styles.link, styles.home)}>
         HRnet
       </NavLink>
-      <nav className="flex items-center gap-2">
+      <nav className={styles.nav}>
         <NavLink
-          className={({ isActive }) => (isActive ? "text-purple underline" : "")}
+          className={({ isActive }) => clsx(styles.link, isActive && styles.active)}
           to="/"
         >
           Home
         </NavLink>
         <NavLink
-          className={({ isActive }) => (isActive ? "text-purple underline" : "")}
+          className={({ isActive }) => clsx(styles.link, isActive && styles.active)}
           to="/employees-list"
         >
           Current Employees

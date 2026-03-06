@@ -1,0 +1,32 @@
+.header {
+    background-color: var(--sec-bg-color);
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+    z-index: 999999999;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.link {
+    text-decoration: none;
+    color: var(--main-text-color);
+}
+
+.home {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.active {
+    text-decoration: underline;
+    color: var(--accent-color);
+}

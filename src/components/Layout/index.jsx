@@ -1,11 +1,12 @@
 import { Outlet } from "react-router";
 import Header from "../Header";
+import styles from "./Layout.module.css";
 
 export default function Layout() {
   return (
-    <div className="bg-light-grey min-h-screen">
+    <div className={styles.wrapper}>
       <Header />
-      <main className="p-8">
+      <main className={styles.main}>
         <Outlet />
       </main>
     </div>
