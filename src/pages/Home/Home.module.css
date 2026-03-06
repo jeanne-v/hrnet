@@ -35,6 +35,10 @@
     width: 100%;
 }
 
+.form p {
+    margin: 0;
+}
+
 .separator {
     border-top: 4px dotted var(--border-color);
     width: 100%;

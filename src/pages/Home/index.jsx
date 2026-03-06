@@ -1,9 +1,19 @@
+import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { MenuSelect } from "menu-select";
+import "menu-select/style.css";
+
 import states from "../../statesData";
+import departments from "../../departmentsData";
 import { addEmployee } from "../../slices/employeesSlice";
 import styles from "./Home.module.css";
 
 export default function Home() {
+  const [selectedDepartmentOption, setSelectedDepartmentOption] = useState(
+    departments[0],
+  );
+  const [selectedStateOption, setSelectedStateOption] = useState(states[0]);
+
   const dispatch = useDispatch();
 
   function handleSubmit(formData) {
@@ -12,10 +22,10 @@ export default function Home() {
       lastName: formData.get("last-name"),
       dateOfBirth: formData.get("date-of-birth"),
       startDate: formData.get("start-date"),
-      department: formData.get("department"),
+      department: selectedDepartmentOption.value,
       street: formData.get("street"),
       city: formData.get("city"),
-      state: formData.get("state"),
+      state: selectedStateOption.value,
       zipCode: formData.get("zip-code"),
     };
 
@@ -66,16 +76,13 @@ export default function Home() {
               </div>
 
               <div className={styles["form-block"]}>
-                <label htmlFor="state">State</label>
-                <select id="state" name="state">
-                  {states.map((state) => {
-                    return (
-                      <option key={state.abbreviation} value={state.abbreviation}>
-                        {state.name}
-                      </option>
-                    );
-                  })}
-                </select>
+                <p id="state-label">State</p>
+                <MenuSelect
+                  options={states}
+                  selectedOption={selectedStateOption}
+                  setSelectedOption={setSelectedStateOption}
+                  labelledby="state-label"
+                />
               </div>
 
               <div className={styles["form-block"]}>
@@ -88,14 +95,13 @@ export default function Home() {
           <div className={styles.separator}></div>
 
           <div className={styles["form-block"]}>
-            <label htmlFor="department">Department</label>
-            <select id="department" name="department">
-              <option>Sales</option>
-              <option>Marketing</option>
-              <option>Engineering</option>
-              <option>Human Resources</option>
-              <option>Legal</option>
-            </select>
+            <p id="department-label">Department</p>
+            <MenuSelect
+              options={departments}
+              selectedOption={selectedDepartmentOption}
+              setSelectedOption={setSelectedDepartmentOption}
+              labelledby="department-label"
+            />
           </div>
           <button className={styles.button}>Save</button>
         </form>
