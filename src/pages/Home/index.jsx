@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { MenuSelect } from "menu-select";
 import "menu-select/style.css";
 
+import Modal from "../../components/Modal";
 import states from "../../statesData";
 import departments from "../../departmentsData";
 import { addEmployee } from "../../slices/employeesSlice";
@@ -13,6 +14,8 @@ export default function Home() {
     departments[0],
   );
   const [selectedStateOption, setSelectedStateOption] = useState(states[0]);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -30,6 +33,7 @@ export default function Home() {
     };
 
     dispatch(addEmployee(employee));
+    setIsModalOpen(true);
   }
 
   return (
@@ -106,6 +110,9 @@ export default function Home() {
           <button className={styles.button}>Save</button>
         </form>
       </div>
+      <Modal isOpen={isModalOpen} setIsOpen={setIsModalOpen}>
+        Employee Created!
+      </Modal>
     </div>
   );
 }

@@ -1,0 +1,44 @@
+.overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: var(--visual-viewport-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999999999;
+    padding: 24px;
+}
+
+.modal {
+    background-color: var(--sec-bg-color);
+    padding: 24px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.dialog {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 24px;
+}
+
+.heading {
+    margin: 0;
+}
+
+.button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+.button>img {
+    height: 32px;
+    cursor: pointer;
+    display: block;
+}

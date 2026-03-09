@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scrollbar-gutter: auto !important;
+}
+
 :root {
     --font-lato: "Lato", sans-serif;
     --main-text-color: #262626;
