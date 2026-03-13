@@ -30,6 +30,7 @@
 
 .calendar-wrapper {
     width: fit-content;
+    max-width: 100%;
     position: absolute;
     background-color: var(--sec-bg-color);
     left: 0;
@@ -42,4 +43,17 @@
 
 .calendar {
     --rdp-accent-color: var(--accent-color);
+}
+
+@media (max-width: 460px) {
+    .calendar {
+        --rdp-day-height: 34px;
+        --rdp-day-width: 34px;
+        --rdp-day_button-height: 32px;
+        --rdp-day_button-width: 32px;
+    }
+
+    .input-container {
+        max-width: 254px;
+    }
 }
