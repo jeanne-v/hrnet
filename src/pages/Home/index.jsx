@@ -8,6 +8,7 @@ import states from "../../statesData";
 import departments from "../../departmentsData";
 import { addEmployee } from "../../slices/employeesSlice";
 import styles from "./Home.module.css";
+import DateInput from "../../components/DateInput";
 
 export default function Home() {
   const [selectedDepartmentOption, setSelectedDepartmentOption] = useState(
@@ -55,12 +56,12 @@ export default function Home() {
 
           <div className={styles["form-block"]}>
             <label htmlFor="date-of-birth">Date of Birth</label>
-            <input id="date-of-birth" name="date-of-birth" type="date" />
+            <DateInput id="date-of-birth" name="date-of-birth" />
           </div>
 
           <div className={styles["form-block"]}>
             <label htmlFor="start-date">Start Date</label>
-            <input id="start-date" name="start-date" type="date" />
+            <DateInput id="start-date" name="start-date" />
           </div>
 
           <div className={styles.separator}></div>
@@ -80,7 +81,9 @@ export default function Home() {
               </div>
 
               <div className={styles["form-block"]}>
-                <p id="state-label">State</p>
+                <p className={styles["menu-label"]} id="state-label">
+                  State
+                </p>
                 <MenuSelect
                   options={states}
                   selectedOption={selectedStateOption}
@@ -99,7 +102,9 @@ export default function Home() {
           <div className={styles.separator}></div>
 
           <div className={styles["form-block"]}>
-            <p id="department-label">Department</p>
+            <p className={styles["menu-label"]} id="department-label">
+              Department
+            </p>
             <MenuSelect
               options={departments}
               selectedOption={selectedDepartmentOption}
