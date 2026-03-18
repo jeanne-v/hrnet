@@ -10,7 +10,9 @@
     max-width: 1200px;
 }
 
-.container {
+/* TABLE */
+
+.table-container {
     overflow-x: auto;
 }
 
@@ -72,4 +74,25 @@
 
 .icon {
     height: 16px;
+}
+
+/* FILTER */
+
+.filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    gap: 8px
+}
+
+.search-input {
+    max-width: 200px;
+    height: 30px;
+    padding: 4px;
 }

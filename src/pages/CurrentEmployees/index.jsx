@@ -6,6 +6,19 @@ import sortIcon from "../../assets/sort.svg";
 import sortUpIcon from "../../assets/sort-up.svg";
 import sortDownIcon from "../../assets/sort-down.svg";
 
+function getSearchFilteredRows(rows, searchFilter) {
+  if (!searchFilter) {
+    return rows;
+  }
+
+  const searchValue = searchFilter.toLowerCase();
+
+  return rows.filter((row) => {
+    const values = Object.values(row);
+    return values.some((value) => value.toLowerCase().includes(searchValue));
+  });
+}
+
 function getSortedRows(rows, sortObj) {
   if (!sortObj) {
     return rows;
@@ -23,6 +36,7 @@ function getSortedRows(rows, sortObj) {
 }
 
 export default function CurrentEmployees() {
+  const [searchInputValue, setSearchInputValue] = useState("");
   const [currentSort, setCurrentSort] = useState(null);
   const employees = useSelector((state) => state.employees);
   const headers = [
@@ -37,7 +51,9 @@ export default function CurrentEmployees() {
     { text: "Zip Code", value: "zipCode" },
   ];
 
-  let rows = getSortedRows(employees, currentSort);
+  let rows = getSearchFilteredRows(employees, searchInputValue);
+
+  rows = getSortedRows(rows, currentSort);
 
   function onSortBtnClick(e) {
     const value = e.currentTarget.dataset.value;
@@ -52,11 +68,28 @@ export default function CurrentEmployees() {
     }
   }
 
+  function handleSearchInputChange(e) {
+    setSearchInputValue(e.target.value);
+  }
+
   return (
     <div>
       <h1 className={styles.heading}>Current Employees</h1>
       <div className={styles.content}>
-        <div className={styles.container}>
+        <div className={styles.filter}>
+          <div className={styles.search}>
+            <label htmlFor="search-input">Search:</label>
+            <input
+              value={searchInputValue}
+              onChange={handleSearchInputChange}
+              name="search"
+              type="search"
+              id="search-input"
+              className={styles["search-input"]}
+            />
+          </div>
+        </div>
+        <div className={styles["table-container"]}>
           <table className={styles.table}>
             <thead className={styles.headers}>
               <tr>
