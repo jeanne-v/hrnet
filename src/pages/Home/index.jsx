@@ -11,6 +11,7 @@ import styles from "./Home.module.css";
 import DateInput from "../../components/DateInput";
 
 export default function Home() {
+  const [formKey, setFormKey] = useState(0);
   const [selectedDepartmentOption, setSelectedDepartmentOption] = useState(
     departments[0],
   );
@@ -34,6 +35,9 @@ export default function Home() {
     };
 
     dispatch(addEmployee(employee));
+    setSelectedDepartmentOption(departments[0]);
+    setSelectedStateOption(states[0]);
+    setFormKey((prevValue) => prevValue + 1);
     setIsModalOpen(true);
   }
 
@@ -43,7 +47,7 @@ export default function Home() {
       <div className={styles.content}>
         <h2 className={styles["sub-heading"]}>Create Employee</h2>
 
-        <form action={handleSubmit} className={styles.form}>
+        <form action={handleSubmit} className={styles.form} key={formKey}>
           <div className={styles["form-block"]}>
             <label htmlFor="first-name">First Name</label>
             <input id="first-name" name="first-name" type="text" />
