@@ -96,3 +96,55 @@
     height: 30px;
     padding: 4px;
 }
+
+.limit {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.limit p {
+    margin: 0;
+}
+
+.limit>div {
+    width: 60px;
+}
+
+.pagination-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.pagination {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.rows-nb {
+    margin: 0;
+}
+
+.pagination-btn {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    padding: 4px;
+}
+
+.pagination-btn:disabled {
+    opacity: 0.5;
+    cursor: auto;
+}
+
+.pagination-btn>img {
+    width: 24px;
+    display: block;
+}
+
+.pagination-text {
+    margin: 0;
+}
