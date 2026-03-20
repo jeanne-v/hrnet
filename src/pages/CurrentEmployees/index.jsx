@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { MenuSelect } from "menu-select";
+import { MenuSelect } from "@jeanne-v/menu-select";
+import "@jeanne-v/menu-select/style.css";
 import styles from "./CurrentEmployees.module.css";
 
 import sortIcon from "../../assets/sort.svg";

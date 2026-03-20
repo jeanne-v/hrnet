@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { MenuSelect } from "menu-select";
-import "menu-select/style.css";
+import { MenuSelect } from "@jeanne-v/menu-select";
+import "@jeanne-v/menu-select/style.css";
 
 import Modal from "../../components/Modal";
 import states from "../../statesData";
