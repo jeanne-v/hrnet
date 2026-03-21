@@ -7,7 +7,6 @@ html {
 }
 
 :root {
-    --font-lato: "Lato", sans-serif;
     --main-text-color: #262626;
     --main-bg-color: #f1f2f3;
     --sec-bg-color: #ffffff;
@@ -17,8 +16,24 @@ html {
     background-color: var(--main-bg-color);
 }
 
+@font-face {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
+    src: url("./assets/fonts/lato-latin-regular.woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 700;
+    src: url("./assets/fonts/lato-latin-700.woff2");
+    font-display: swap;
+}
+
 body {
-    font-family: var(--font-lato);
+    font-family: "Lato";
     line-height: 1.25;
     color: var(--main-text-color);
     margin: 0;
