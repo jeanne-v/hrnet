@@ -92,6 +92,7 @@ export default function DateInput({ name, id }) {
           className={styles["calendar-wrapper"]}
           ref={calendarRef}
           aria-label="Pick a date"
+          data-testid="calendar"
         >
           <DayPicker
             role="application"
