@@ -4,8 +4,8 @@ import { MenuSelect } from "@jeanne-v/menu-select";
 import "@jeanne-v/menu-select/style.css";
 
 import Modal from "../../components/Modal";
-import states from "../../statesData";
-import departments from "../../departmentsData";
+import states from "../../data/statesData";
+import departments from "../../data/departmentsData";
 import { addEmployee } from "../../slices/employeesSlice";
 import styles from "./Home.module.css";
 import DateInput from "../../components/DateInput";

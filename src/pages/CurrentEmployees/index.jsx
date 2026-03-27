@@ -196,7 +196,9 @@ export default function CurrentEmployees() {
             >
               <img src={chevronLeftIcon} alt="Previous page" />
             </button>
-            <p className={styles["pagination-text"]}>{currentPage}</p>
+            <p className={styles["pagination-text"]} data-testid="page-nb">
+              {currentPage}
+            </p>
             <button
               className={styles["pagination-btn"]}
               disabled={filteredRows.length <= endIndex + 1}
