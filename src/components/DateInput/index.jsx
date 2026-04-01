@@ -7,7 +7,7 @@ import styles from "./DateInput.module.css";
 
 import calendarIcon from "../../assets/calendar.svg";
 
-export default function DateInput({ name, id }) {
+export default function DateInput({ name = null, id = null }) {
   const [inputValue, setInputValue] = useState("");
   const [month, setMonth] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState();

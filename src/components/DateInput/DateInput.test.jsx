@@ -36,4 +36,36 @@ describe("The DateInput component", () => {
     await user.click(screen.getByRole("button", { name: "Saturday, January 1st, 2000" }));
     expect(input.value).toBe("01/01/2000");
   });
+
+  it("should close calendar on escape keydown", async () => {
+    const user = userEvent.setup();
+    render(<DateInput />);
+
+    await user.click(screen.getByRole("button", { name: "open calendar" }));
+    await user.keyboard("{Escape}");
+
+    expect(screen.queryByTestId("calendar")).not.toBeInTheDocument();
+  });
+
+  it("should close calendar on click out", async () => {
+    const user = userEvent.setup();
+    render(<DateInput />);
+
+    await user.click(screen.getByRole("button", { name: "open calendar" }));
+    await user.click(screen.getByRole("textbox"));
+
+    expect(screen.queryByTestId("calendar")).not.toBeInTheDocument();
+  });
+
+  it("should accept a name prop", () => {
+    render(<DateInput name="date" />);
+
+    expect(screen.getByRole("textbox")).toHaveAttribute("name", "date");
+  });
+
+  it("should accept an id prop", () => {
+    render(<DateInput id="date-input" />);
+
+    expect(screen.getByRole("textbox")).toHaveAttribute("id", "date-input");
+  });
 });
