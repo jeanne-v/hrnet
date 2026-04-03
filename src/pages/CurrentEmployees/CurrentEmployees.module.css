@@ -148,3 +148,11 @@
 .pagination-text {
     margin: 0;
 }
+
+@media (max-width: 540px) {
+    .filter {
+        flex-direction: column;
+        align-items: start;
+        gap: 12px;
+    }
+}
