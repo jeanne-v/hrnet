@@ -101,6 +101,11 @@ export default function CurrentEmployees() {
     setCurrentPage((prevValue) => prevValue - 1);
   }
 
+  function handleNumbersOptionSelect(option) {
+    setSelectedNumberOption(option);
+    setCurrentPage(1);
+  }
+
   return (
     <div>
       <h1 className={styles.heading}>Current Employees</h1>
@@ -113,7 +118,7 @@ export default function CurrentEmployees() {
                 labelledby="number-of-rows"
                 options={numbersOptions}
                 selectedOption={selectedNumberOption}
-                setSelectedOption={setSelectedNumberOption}
+                onOptionSelect={handleNumbersOptionSelect}
                 size="small"
               />
             </div>

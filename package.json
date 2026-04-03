@@ -12,7 +12,7 @@
     "coverage": "vitest run --coverage"
   },
   "dependencies": {
-    "@jeanne-v/menu-select": "^1.0.0",
+    "@jeanne-v/menu-select": "^2.0.0",
     "@reduxjs/toolkit": "^2.11.2",
     "@testing-library/user-event": "^14.6.1",
     "clsx": "^2.1.1",

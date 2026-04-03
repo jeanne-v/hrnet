@@ -91,7 +91,7 @@ export default function Home() {
                 <MenuSelect
                   options={states}
                   selectedOption={selectedStateOption}
-                  setSelectedOption={setSelectedStateOption}
+                  onOptionSelect={setSelectedStateOption}
                   labelledby="state-label"
                 />
               </div>
@@ -112,7 +112,7 @@ export default function Home() {
             <MenuSelect
               options={departments}
               selectedOption={selectedDepartmentOption}
-              setSelectedOption={setSelectedDepartmentOption}
+              onOptionSelect={setSelectedDepartmentOption}
               labelledby="department-label"
             />
           </div>
