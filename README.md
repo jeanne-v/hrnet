@@ -1,16 +1,5 @@
-# React + Vite
+# HRnet
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Repo for the HRnet project from OpenClassrooms' JS-React path. For this project we had to convert a JQuery app to use React. Original Jquery app [here](https://github.com/OpenClassrooms-Student-Center/P12_Front-end).
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The original JQuery app uses several JQuery plugins; all had to replaced by react libraries or custom react components. One of them had to be replaced by a custom react component published as a standalone library on npm. I choose to do this for the dropdown widget (repo [here](https://github.com/jeanne-v/menu-select), published [here](https://www.npmjs.com/package/@jeanne-v/menu-select) on npm.)
